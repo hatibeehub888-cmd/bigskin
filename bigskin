@@ -369,7 +369,7 @@ local bigSkinBugEnabled = false
 local bigSkinBugOriginal = {}
 local bigSkinBugConnections = {}
 
-local BIG_HEAD_SIZE = Vector3.new(6.6 * 1.2, 6.6 * 1.2, 6.6 * 1.2)
+local BIG_HEAD_SCALE = 1.6
 
 local function applyBigSkin(char)
     local data = bigSkinBugOriginal[char]
@@ -377,7 +377,12 @@ local function applyBigSkin(char)
     -- head only: enlarge the head and strip its SpecialMesh so the scale shows
     for part in pairs(data.parts) do
         if part.Name:lower() == "head" then
-            part.Size = BIG_HEAD_SIZE
+            local originalSize = data.parts[part].Size
+            part.Size = Vector3.new(
+                originalSize.X * BIG_HEAD_SCALE,
+                originalSize.Y * BIG_HEAD_SCALE,
+                originalSize.Z * BIG_HEAD_SCALE
+            )
             local mesh = part:FindFirstChildOfClass("SpecialMesh")
             if mesh then mesh.Parent = nil end
             break
