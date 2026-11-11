@@ -369,7 +369,7 @@ local bigSkinBugEnabled = false
 local bigSkinBugOriginal = {}
 local bigSkinBugConnections = {}
 
-local BIG_HEAD_SCALE = 3.9
+local BIG_HEAD_SCALE = 3.7
 
 local function applyBigSkin(char)
     local data = bigSkinBugOriginal[char]
