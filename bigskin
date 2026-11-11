@@ -369,7 +369,7 @@ local bigSkinBugEnabled = false
 local bigSkinBugOriginal = {}
 local bigSkinBugConnections = {}
 
-local BIG_HEAD_SIZE = Vector3.new(6.6, 6.6, 6.6)
+local BIG_HEAD_SIZE = Vector3.new(6.6 * 2.6, 6.6 * 2.6, 6.6 * 2.6)
 
 local function applyBigSkin(char)
     local data = bigSkinBugOriginal[char]
